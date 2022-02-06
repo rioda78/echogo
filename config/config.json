@@ -1,0 +1,7 @@
+{
+    "DbUsername" : "root",
+    "DbPassword" : "",
+    "DbPort" : "3306",
+    "DbHost" : "127.0.0.1",
+    "DbName" : "echo_rest"
+}
