@@ -32,6 +32,11 @@ func main() {
 	e.Use(middleware.RequestID())
 	e.Validator = &midlewares.CustomValidator{Validator: validator.New()}
 	e.Use(midlewares.ContextDB(db))
+	//CORS
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
+	}))
 
 	apiGroup := e.Group("/api")
 	rute.Ruteprivate(apiGroup)
