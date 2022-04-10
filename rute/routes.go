@@ -1,6 +1,8 @@
 package rute
 
 import (
+	"echogo/kontroller"
+	"echogo/midlewares"
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
 	"net/http"
@@ -28,4 +30,7 @@ func RuteUmum(e *echo.Group) {
 		return c.String(http.StatusOK, "selamat datang di home!")
 	})
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
+	e.POST("/register", kontroller.Register)
+	e.POST("/login", kontroller.Login)
+	e.POST("/logout", kontroller.Logout, midlewares.Otorisasi)
 }

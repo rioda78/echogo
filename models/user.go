@@ -14,7 +14,6 @@ type User struct {
 	LastName     string `json:"last_name"`
 	Username     string `json:"username" gorm:"unique"`
 	PasswordHash string `json:"-"`
-	DisplayName  string `json:"display_name"`
 	RoleId       uint   `json:"role_id"`
 	Role         Role   `json:"role" gorm:"foreignKey:RoleId"`
 }
