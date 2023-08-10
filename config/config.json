@@ -1,4 +1,5 @@
 {
+    "Rdms": "mysql",
     "DbUsername" : "root",
     "DbPassword" : "12345",
     "DbPort" : "3306",

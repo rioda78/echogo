@@ -3,6 +3,7 @@ package config
 import "github.com/tkanos/gonfig"
 
 type Configuration struct {
+	Rdms       string
 	DbUsername string
 	DbPassword string
 	DbHost     string
@@ -12,6 +13,9 @@ type Configuration struct {
 
 func GetConfig() Configuration {
 	conf := Configuration{}
-	gonfig.GetConf("config/config.json", &conf)
+	err := gonfig.GetConf("config/config.json", &conf)
+	if err != nil {
+		return Configuration{}
+	}
 	return conf
 }
