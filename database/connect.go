@@ -11,11 +11,11 @@ import (
 func Connect() *gorm.DB {
 	conf := config.GetConfig()
 	var connectionString = ""
-	if len(conf.DbPassword) > 0 {
+	if conf.Rdms == "mysql" {
 		//"user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
 		connectionString = conf.DbUsername + ":" + conf.DbPassword + "@tcp(" + conf.DbHost + ":" + conf.DbPort + ")/" + conf.DbName
 	} else {
-		connectionString = conf.DbUsername + "@tcp(" + conf.DbHost + ":" + conf.DbPort + ")/" + conf.DbName
+		connectionString = "host=" + conf.DbHost + " user=" + conf.DbUsername + " password=" + conf.DbPassword + " dbname=" + conf.DbName + " port=" + conf.DbPort + " sslmode=disable"
 	}
 
 	if conf.Rdms == "mysql" {

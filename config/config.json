@@ -1,8 +1,8 @@
 {
-    "Rdms": "mysql",
-    "DbUsername" : "root",
+    "Rdms": "postgres",
+    "DbUsername" : "postgres",
     "DbPassword" : "12345",
-    "DbPort" : "3306",
+    "DbPort" : "5432",
     "DbHost" : "127.0.0.1",
     "DbName" : "echo_rest"
 }
