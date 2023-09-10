@@ -40,7 +40,7 @@ func main() {
 
 	apiGroup := e.Group("/api")
 	rute.Ruteprivate(apiGroup)
-	umumGrup := e.Group("")
+	umumGrup := e.Group("/api")
 	rute.RuteUmum(umumGrup)
 
 	e.Logger.Fatal(e.Start(":8000"))

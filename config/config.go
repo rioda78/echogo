@@ -13,7 +13,7 @@ type Configuration struct {
 
 func GetConfig() Configuration {
 	conf := Configuration{}
-	err := gonfig.GetConf("config/config.json", &conf)
+	err := gonfig.GetConf("config.json", &conf)
 	if err != nil {
 		return Configuration{}
 	}
